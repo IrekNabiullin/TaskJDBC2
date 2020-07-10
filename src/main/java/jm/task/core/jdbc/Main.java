@@ -7,6 +7,7 @@ public class Main {
         // реализуйте алгоритм здесь
         try {
             Util.connect();
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -28,6 +28,13 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+//        return super.toString();
+        String result = name + " " + lastName + ", age: " + age;
+        return result;
+    }
+
     public Long getId() {
         return id;
     }

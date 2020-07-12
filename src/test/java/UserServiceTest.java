@@ -4,6 +4,9 @@ import jm.task.core.jdbc.service.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOError;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceTest {
@@ -42,6 +45,7 @@ public class UserServiceTest {
             userService.saveUser(testName, testLastName, testAge);
 
             User user = userService.getAllUsers().get(0);
+            System.out.println("user(0) = " + user.toString());
 
             if (!testName.equals(user.getName())
                     || !testLastName.equals(user.getLastName())

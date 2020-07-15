@@ -59,7 +59,6 @@ public class UserDaoHibernateImpl implements UserDao {
     public List<User> getAllUsers() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        @SuppressWarnings("unchecked")
         List<User> userList = session.createQuery("From " + User.class.getSimpleName()).list();
         session.getTransaction().commit();
         session.close();

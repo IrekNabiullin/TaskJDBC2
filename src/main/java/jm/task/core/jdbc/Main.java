@@ -6,7 +6,8 @@ import jm.task.core.jdbc.util.Util;
 public class Main {
     public static void main(String[] args) {
         try {
-            Util.connect();
+            Util.connect();  // решение для JDBC
+            Util.getSessionFactory(); // решение для Hibernate
             UserServiceImpl userService = new UserServiceImpl();
             userService.createUsersTable();
             userService.saveUser("Ivan", "Ivanov", (byte) 25);
@@ -21,6 +22,7 @@ public class Main {
         } finally {
             try {
                 Util.disconnect();
+                Util.getSessionFactory().close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
